@@ -1,0 +1,15 @@
+Angular e baseado no conceito de web components, assim como a maioria dos frameworks e bibliotecas web atuais.
+
+Web Component
+ - Composto por quatro partes: HTML, CSS, JS e dados (est�ticos ou din�micos)
+ - Unidade minima
+ - Independente
+
+Criacao de Components
+ - Deve ser uma class
+ - Adicionar um comportamento na class. Espec�ficamente um Decorator (Annotation em Java)
+ - Tudo deve ser informado ao m�dulo pertencente
+
+Adicionar dependencias via ng: ng add bootstrap
+
+extensao: Angular language service
