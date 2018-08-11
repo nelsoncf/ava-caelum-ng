@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Foto } from '../foto/foto.model';
 import { FotoService } from '../foto/foto.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'caelumpic-cadastro',
   templateUrl: './cadastro.component.html',
   styles: []
@@ -15,7 +16,8 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private servico: FotoService,
-    private rotaAtivada: ActivatedRoute
+    private rotaAtivada: ActivatedRoute,
+    private roteador: Router
   ) { }
 
   ngOnInit() {
@@ -35,12 +37,15 @@ export class CadastroComponent implements OnInit {
     if (this.foto._id) {
       this.servico.atualizar(this.foto)
         .subscribe(
-          () => console.log(`${this.foto.titulo}`)
+          () => {
+            console.log(`${this.foto.titulo}`);
+            this.roteador.navigate(['']);
+          }
         );
     } else {
       this.servico
       .cadastrar(this.foto)
-      .subscribe(x => console.log(x));
+      .subscribe(x => this.roteador.navigate(['']));
     }
   }
 

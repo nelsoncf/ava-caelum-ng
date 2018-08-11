@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FotoService } from '../foto/foto.service';
 import { Foto } from '../foto/foto.model';
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'caelumpic-listagem',
   templateUrl: './listagem.component.html',
   styles: []

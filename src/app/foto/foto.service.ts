@@ -22,7 +22,7 @@ export class FotoService {
   }
 
   public atualizar(foto: Foto): Observable<Foto> {
-    return this.http.put<Foto>(this.url + foto._id, foto)
+    return this.http.put<Foto>(this.url + foto._id, foto);
 
   }
 
