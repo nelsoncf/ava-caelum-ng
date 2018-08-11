@@ -11,7 +11,10 @@
 
   <div class="row">
     <caelumpic-card *ngFor="let foto of fotos" [foto]="foto" class="col-md-4 mb-4">
-      <caelumpic-foto [url]="foto.url" [titulo]="foto.titulo"></caelumpic-foto>
+      <a [routerLink]="['/editar', foto._id]" class="foto" routerLinkActive="router-link-active" >
+        <caelumpic-foto [url]="foto.url" [titulo]="foto.titulo"></caelumpic-foto>
+      </a>
+      <button (click)="apagar(foto)" class="btn btn-danger">APAGAR</button>
     </caelumpic-card>
   </div>
 

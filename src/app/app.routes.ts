@@ -12,6 +12,10 @@ const routasApp: Routes = [
     component: CadastroComponent
   },
   {
+    path: 'editar/:id',
+    component: CadastroComponent
+  },
+  {
     path: '**',
     redirectTo: ''
   }
